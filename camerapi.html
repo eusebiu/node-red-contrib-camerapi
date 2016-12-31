@@ -14,11 +14,19 @@
   limitations under the License.
   Authors:
      - Olaf Hahn
+     - Eusebiu Marcu
 -->
 
 
 <!-- CameraPi TakePhoto -->
 <script type="text/x-red" data-template-name="camerapi-takephoto">
+    <div class="form-row node-input-cameraProc">
+         <label for="node-input-cameraProc"><i class="fa fa-camera"></i> <span data-i18n="camerapi.label.cameraProc"></span></label>
+	     <select id="node-input-cameraProc">
+            <option value="raspistill"selected="selected">Raspistill</option>
+            <option value="picamera">PiCamera</option>
+        </select>
+    </div>
     <div class="form-row node-input-filemode">
          <label for="node-input-filemode"><i class="fa fa-file-image-o"></i> <span data-i18n="camerapi.label.filemode"></span></label>
 	     <select id="node-input-filemode">
@@ -103,7 +111,8 @@
             resolution: {value:"1", required:true},
             fliph: {value:"0", required:true},
             flipv: {value:"0", required:true},
-            name: {value:""}
+            name: {value:""},
+            cameraProc: {value:"raspistill"}
         },
         inputs:1,
         outputs:1,
@@ -148,6 +157,13 @@
 
 <!-- CameraPi Detect-Node -->
 <script type="text/x-red" data-template-name="camerapi-detect">
+    <div class="form-row node-input-cameraProc">
+         <label for="node-input-cameraProc"><i class="fa fa-camera"></i> <span data-i18n="camerapi.label.cameraProc"></span></label>
+	     <select id="node-input-cameraProc">
+            <option value="raspistill" selected="selected">Raspistill</option>
+            <option value="picamera">PiCamera</option>
+        </select>
+    </div>
     <div class="form-row node-input-filemode">
          <label for="node-input-filemode"><i class="fa fa-file-image-o"></i> <span data-i18n="camerapi.label.filemode"></span></label>
 	     <select id="node-input-filemode">
@@ -234,7 +250,8 @@
             detect: {value:"1", required:true},
             framesize: {value:"1", required:true},
             extract: {value:"1", required:true},
-            name: {value:""}
+            name: {value:""},
+            cameraProc: {value:"raspistill"}
         },
         inputs:1,
         outputs:1,

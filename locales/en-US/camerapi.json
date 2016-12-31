@@ -25,7 +25,8 @@
             "password":"Password", 
             "container":"Container",
             "name": "Name",
-            "none": "none"
+            "none": "none",
+	    "cameraProc": "Camera type"
         },
        "errors": {
         }

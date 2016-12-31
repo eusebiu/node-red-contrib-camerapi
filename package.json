@@ -1,6 +1,6 @@
 {
     "name"         : "node-red-contrib-camerapi",
-    "version"      : "0.0.23",
+    "version"      : "0.0.24",
     "description"  : "Node Red Nodes for getting photos, processing via opencv on raspberry pi with a raspberry pi camera ",
     "license"      : "Apache-2.0",
     "main"		   : "camerapi.js",
@@ -30,7 +30,7 @@
         	}
     },
      "author": {
-     	"name": "Olaf Hahn",
-     	"email": "olaf_hahn@at.ibm.com"
+     	"name": "Olaf Hahn, Eusebiu Marcu",
+     	"email": "olaf_hahn@at.ibm.com, marcueusebiu@gmail.com"
   }
 }

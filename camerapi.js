@@ -42,6 +42,7 @@ module.exports = function(RED) {
 		this.fliph = config.fliph;
 		this.flipv = config.flipv;
 		this.name =  config.name;
+		this.cameraProc = config.cameraProc;
 		this.activeProcesses = {};
 
 		var node = this;
@@ -62,8 +63,16 @@ module.exports = function(RED) {
             var filemode;
             var filefqn;
             var fliph, flipv;
+	    var cameraProc;
 
          	node.status({fill:"green",shape:"dot",text:"connected"});
+
+		// Check the given camera type
+		if (msg.cameraProc) {
+			cameraProc = msg.cameraProc;
+		} else {
+			cameraProc = " raspistill";
+		}
 
          	// Check the given filemode
          	if((msg.filemode) && (msg.filemode !== "")) {
@@ -157,7 +166,8 @@ module.exports = function(RED) {
                  		flipv= "1";	        			         					
          			}
             	}
-         	cl += " " + fliph + " " + flipv;          		
+         	cl += " " + fliph + " " + flipv;
+		cl += " " + cameraProc;          		
 
          	if (RED.settings.verbose) { node.log(cl); }
             
