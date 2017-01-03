@@ -14,6 +14,7 @@
  * limitations under the License.
  * Authors:
  *    - Olaf Hahn
+ *    - Eusebiu Marcu
  **/
 
 
@@ -68,8 +69,8 @@ module.exports = function(RED) {
          	node.status({fill:"green",shape:"dot",text:"connected"});
 
 		// Check the given camera type
-		if (msg.cameraProc) {
-			cameraProc = msg.cameraProc;
+		if (node.cameraProc && node.cameraProc !== "") {
+			cameraProc = node.cameraProc;
 		} else {
 			cameraProc = " raspistill";
 		}
